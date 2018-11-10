@@ -3,11 +3,11 @@
 :root {
   --container-bg-color: #333;  
   --left-bg-color: rgba(209, 199, 52, 0.301);
-  --left-button-hover-color: rgba(161, 11, 11, 0.3);
+  --left-button-hover-color: rgba(161, 126, 11, 0.3);
   --right-bg-color: rgba(43, 43, 43, 0.596);
   --right-button-hover-color: rgba(92, 92, 92, 0.3);
   --hover-width: 75%;
-  --other-width: 23%;
+  --other-width: 25%;
   --speed: 1000ms;
 }
 /* the body/ browser page */
@@ -71,7 +71,7 @@ h1 {
   height: 100%;
   overflow: hidden;
 }
-
+/* images */
 .split.left {
   left: 0;
   background: url('img/motorcyclist.jpg') center center no-repeat;
@@ -98,4 +98,34 @@ h1 {
   width: 100%;
   height: 100%;
   background: var(--right-bg-color);
+}
+
+/*transition*/
+.split.left, .split.right, .split.left::before, .split.right::before {
+  transition: var(--speed) all ease-in-out;
+}
+
+.hover-left .left {
+  width: var(--hover-width);
+}
+
+.hover-left .right {
+  width: var(--other-width);
+}
+
+.hover-left .right::before {
+  z-index: 2;
+}
+
+
+.hover-right .right {
+  width: var(--hover-width);
+}
+
+.hover-right .left {
+  width: var(--other-width);
+}
+
+.hover-right .left::before {
+  z-index: 2;
 }
