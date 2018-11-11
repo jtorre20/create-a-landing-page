@@ -29,7 +29,7 @@ h1 {
   transform: translateX(-50%);
   white-space: nowrap;
 }
-
+/* buttons*/
 .button {
   display: block;
   position: absolute;
@@ -47,7 +47,7 @@ h1 {
   text-decoration: none;
   transform: translateX(-50%);
 }
-/* buttons*/
+
 .split.left .button:hover {
   background-color: var(--left-button-hover-color);
   border-color: var(--left-button-hover-color);
@@ -128,4 +128,20 @@ h1 {
 
 .hover-right .left::before {
   z-index: 2;
+}
+
+@media(max-width: 800px ) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .button{
+    width: 12rem;
+  }
+}
+
+@media(max-height: 700px) {
+  .button{
+    top: 70%;
+  }
 }
